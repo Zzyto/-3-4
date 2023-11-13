@@ -7,7 +7,7 @@ namespace ПЗ_3_и_4.Test
     public class BinaryOperationTest
     {
         [TestClass]
-        public class Sum()
+        public class Sum
         {
             [TestMethod]
             public void Sum_5_7_returned_12()
@@ -84,7 +84,7 @@ namespace ПЗ_3_и_4.Test
             }
         }
         [TestClass]
-        public class Subtraction()
+        public class Subtraction
         {
             [TestMethod]
             public void Subtraction5_3_is2()
@@ -235,7 +235,7 @@ namespace ПЗ_3_и_4.Test
             }
 
             [TestMethod]
-            [ExpectedException(typeof(Exception), "Делить на 0 нельзя")]
+            [ExpectedException(typeof(Exception), "Division by 0")]
             public void DivisionNegZero() //
             {
                 var a = new Variable("a");
