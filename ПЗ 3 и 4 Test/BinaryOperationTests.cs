@@ -1,5 +1,6 @@
 using ПЗ_3_и_4.IExpr.MainStruct;
 using ПЗ_3_и_4.IExpr.MainStruct.Functions;
+using ПЗ_3_и_4.IExpr.MainStruct.TrigFunctions;
 
 namespace ПЗ_3_и_4.Test
 {

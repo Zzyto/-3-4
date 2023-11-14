@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ПЗ_3_и_4.IExpr.MainStruct.Functions
+﻿namespace ПЗ_3_и_4.IExpr.MainStruct.TrigFunctions
 {
     public class Cot : TrigFunction
     {

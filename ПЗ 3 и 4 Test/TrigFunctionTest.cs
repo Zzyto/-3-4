@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ПЗ_3_и_4.IExpr.MainStruct;
 using ПЗ_3_и_4.IExpr.MainStruct.Functions;
+using ПЗ_3_и_4.IExpr.MainStruct.TrigFunctions;
 
 namespace ПЗ_3_и_4_Test
 {
@@ -88,7 +89,7 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Variable("x");
             var expr = new Cot(x);
-            Assert.AreEqual(expr.Compute(new Dictionary<string, double>{["x"] = 1}),Math.Cot(1), 0.0001);
+            Assert.AreEqual(expr.Compute(new Dictionary<string, double>{["x"] = 1}),1/Math.Tan(1), 0.0001);
         }
 
         [TestMethod]
@@ -96,7 +97,7 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Variable("x");
             var expr = new Cot(x);
-            Assert.AreEqual(expr.Compute(new Dictionary<string, double>{["x"]=-1}),Math.Cot(-1),0.0001 );
+            Assert.AreEqual(expr.Compute(new Dictionary<string, double>{["x"]=-1}),1/Math.Tan(-1),0.0001 );
         }
 
         [TestMethod]
