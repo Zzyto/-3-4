@@ -38,7 +38,7 @@ namespace ПЗ_3_и_4.Test
                 Assert.AreEqual(expr.ToString(), "2 + 5");
             }
             [TestMethod]
-            public static void SumConstantVariable()
+            public void SumConstantandVariable()
             {
                 var a = new Variable("a");
                 var b = new Constant(5);
