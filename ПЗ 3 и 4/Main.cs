@@ -13,21 +13,8 @@ namespace PZ_3_4
 {
     class PZ_3_4
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var a = new Variable("a");
-            var b = new Variable("b");
-            var expr0 = new Mult(new Sum(a, b), new Minus(new Divide(a, new Constant(2))));
-            var expr = (a + b) * -a / 2;
-
-            Console.WriteLine($"введённое выражение: {expr}");
-            var values = new Dictionary<string, double> { ["a"] = 7, ["b"] = 4 };
-            Console.WriteLine($"значения переменных: {values.ToLineString()}");
-            var result = expr.Compute(values);
-            Console.WriteLine($"результат вычислений: {expr.Compute(values)}");
-
-            Console.WriteLine(expr);
-
         }
     }
 }

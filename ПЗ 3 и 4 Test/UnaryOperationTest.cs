@@ -39,5 +39,15 @@ namespace ПЗ_3_и_4_Test
             Assert.AreEqual(expr.IsPolynom, true);
             Assert.AreEqual(expr.ToString(), "-2");
         }
+        [TestMethod]
+        public void UnaryMinusExprTest()
+        {
+            var x = new Constant(2);
+            var a = new Variable("a");
+            var expr = -(a+x);
+            Assert.AreEqual(expr.IsConstant, false);
+            Assert.AreEqual(expr.IsPolynom, true);
+            Assert.AreEqual(expr.ToString(), "-(a + 2)");
+        }
     }
 }

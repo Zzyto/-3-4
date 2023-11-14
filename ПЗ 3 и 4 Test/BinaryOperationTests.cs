@@ -29,7 +29,7 @@ namespace ПЗ_3_и_4.Test
                 Assert.AreEqual(expr.ToString(), "a + b");
             }
             [TestMethod]
-            public void SumConstant()
+            public void SumConstant1()
             {
                 var a = new Constant(2);
                 var b = new Constant(5);
@@ -39,7 +39,27 @@ namespace ПЗ_3_и_4.Test
                 Assert.AreEqual(expr.ToString(), "2 + 5");
             }
             [TestMethod]
-            public static void SumConstantVariable()
+            public void SumConstant2()
+            {
+                var a = new Constant(2);
+                var b = 5;
+                var expr = a + b;
+                Assert.AreEqual(expr.IsConstant, true);
+                Assert.AreEqual(expr.IsPolynom, true);
+                Assert.AreEqual(expr.ToString(), "2 + 5");
+            }
+            [TestMethod]
+            public void SumConstant3()
+            {
+                var a = 2;
+                var b = new Constant(5);
+                var expr = a + b;
+                Assert.AreEqual(expr.IsConstant, true);
+                Assert.AreEqual(expr.IsPolynom, true);
+                Assert.AreEqual(expr.ToString(), "2 + 5");
+            }
+            [TestMethod]
+            public void SumConstantVariable()
             {
                 var a = new Variable("a");
                 var b = new Constant(5);
@@ -106,10 +126,30 @@ namespace ПЗ_3_и_4.Test
                 Assert.AreEqual(expr.ToString(), "a - b");
             }
             [TestMethod]
-            public void SubtractionConstants()
+            public void SubtractionConstants1()
             {
                 var a = new Constant(2);
                 var b = new Constant(5);
+                var expr = a - b;
+                Assert.AreEqual(expr.IsConstant, true);
+                Assert.AreEqual(expr.IsPolynom, true);
+                Assert.AreEqual(expr.ToString(), "2 - 5");
+            }
+            [TestMethod]
+            public void SubtractionConstants2()
+            {
+                var a = 2;
+                var b = new Constant(5);
+                var expr = a - b;
+                Assert.AreEqual(expr.IsConstant, true);
+                Assert.AreEqual(expr.IsPolynom, true);
+                Assert.AreEqual(expr.ToString(), "2 - 5");
+            }
+            [TestMethod]
+            public void SubtractionConstants3()
+            {
+                var a = new Constant(2);
+                var b = 5;
                 var expr = a - b;
                 Assert.AreEqual(expr.IsConstant, true);
                 Assert.AreEqual(expr.IsPolynom, true);
@@ -181,7 +221,7 @@ namespace ПЗ_3_и_4.Test
                 Assert.AreEqual(expr.ToString(), "a * b");
             }
             [TestMethod]
-            public void MultiplicationConstant()
+            public void MultiplicationConstant1()
             {
                 var a = new Constant(2);
                 var b = new Constant(5);
@@ -190,7 +230,26 @@ namespace ПЗ_3_и_4.Test
                 Assert.AreEqual(expr.IsPolynom, true);
                 Assert.AreEqual(expr.ToString(), "2 * 5");
             }
-
+            [TestMethod]
+            public void MultiplicationConstant2()
+            {
+                var a = 2;
+                var b = new Constant(5);
+                var expr = a * b;
+                Assert.AreEqual(expr.IsConstant, true);
+                Assert.AreEqual(expr.IsPolynom, true);
+                Assert.AreEqual(expr.ToString(), "2 * 5");
+            }
+            [TestMethod]
+            public void MultiplicationConstant3()
+            {
+                var a = new Constant(2);
+                var b = 5;
+                var expr = a * b;
+                Assert.AreEqual(expr.IsConstant, true);
+                Assert.AreEqual(expr.IsPolynom, true);
+                Assert.AreEqual(expr.ToString(), "2 * 5");
+            }
             [TestMethod]
             public void MultiplicationConstantVariable()
             {
@@ -236,13 +295,12 @@ namespace ПЗ_3_и_4.Test
             }
 
             [TestMethod]
-            [ExpectedException(typeof(Exception), "Division by 0")]
             public void DivisionNegZero() //
             {
                 var a = new Variable("a");
                 var b = new Variable("b");
                 var expr = a / b;
-                Assert.IsTrue(double.IsFinite(expr.Compute(new Dictionary<string, double> { ["a"] = -5, ["b"] = 0 })));
+                Assert.IsTrue(double.IsInfinity(expr.Compute(new Dictionary<string, double> { ["a"] = -5, ["b"] = 0 })));
             }
 
             [TestMethod]
@@ -256,10 +314,28 @@ namespace ПЗ_3_и_4.Test
                 Assert.AreEqual(expr.ToString(), "a / b");
             }
             [TestMethod]
-            public void DivisionConstant()
+            public void DivisionConstant1()
             {
                 var a = new Constant(2);
                 var b = new Constant(5);
+                var expr = a / b;
+                Assert.AreEqual(expr.IsConstant, true);
+                Assert.AreEqual(expr.IsPolynom, true);
+            }
+            [TestMethod]
+            public void DivisionConstant2()
+            {
+                var a = 2;
+                var b = new Constant(5);
+                var expr = a / b;
+                Assert.AreEqual(expr.IsConstant, true);
+                Assert.AreEqual(expr.IsPolynom, true);
+            }
+            [TestMethod]
+            public void DivisionConstant3()
+            {
+                var a = new Constant(2);
+                var b = 5;
                 var expr = a / b;
                 Assert.AreEqual(expr.IsConstant, true);
                 Assert.AreEqual(expr.IsPolynom, true);
