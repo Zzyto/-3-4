@@ -7,14 +7,12 @@ using ПЗ_3_и_4.IExpr.MainStruct;
 using ПЗ_3_и_4.IExpr.MainStruct.BinaryOperations;
 using ПЗ_3_и_4.IExpr.MainStruct.UnaryOperations;
 using ПЗ_3_и_4.IExpr.MainStruct.Functions;
-using ПЗ_3_и_4;
+using ПЗ_3_и_4.Dictionary;
 
 namespace PZ_3_4
 {
     class PZ_3_4
     {
-        static void Main()
-        {
-        }
+        static void Main() {}
     }
 }

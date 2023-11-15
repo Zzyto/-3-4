@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ПЗ_3_и_4
+namespace ПЗ_3_и_4.Dictionary
 {
     internal static class DictionaryExtender
     {
