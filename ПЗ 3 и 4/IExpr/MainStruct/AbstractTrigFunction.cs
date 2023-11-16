@@ -10,13 +10,13 @@ namespace ПЗ_3_и_4.IExpr.MainStruct
     public abstract class TrigFunction : Function
     {
         protected AbstractExpr Expression { get; init; }
-        protected string Operation;
+        protected string Operation { get; init; }
 
         public override IEnumerable<string> Variables { get => Expression.Variables; }
         public TrigFunction(AbstractExpr expression) => Expression = expression;
 
-        public override bool IsConstant { get => !Variables.GetEnumerator().MoveNext(); }
-        public override bool IsPolynom { get => !Variables.GetEnumerator().MoveNext(); }
+        public override bool IsConstant { get => !Variables.Any(); }
+        public override bool IsPolynom { get => IsConstant; }
 
         override abstract public double Compute(IReadOnlyDictionary<string, double> variableValues);
 

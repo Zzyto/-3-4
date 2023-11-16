@@ -12,6 +12,5 @@ namespace ПЗ_3_и_4.IExpr.MainStruct.BinaryOperations
 
         public override double Compute(IReadOnlyDictionary<string, double> variableValues) =>
             FirstExpression.Compute(variableValues) - SecondExpression.Compute(variableValues);
-        public override bool IsPolynom => true;
     }
 }

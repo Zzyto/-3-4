@@ -14,7 +14,7 @@ namespace ПЗ_3_и_4.IExpr.MainStruct
 
         public override IEnumerable<string> Variables { get => Expression.Variables; }
 
-        public override bool IsConstant { get => !Variables.GetEnumerator().MoveNext(); }
+        public override bool IsConstant { get => !Variables.Any(); }
         public override bool IsPolynom { get => Expression.IsPolynom; }
 
         public UnaryOperation(AbstractExpr expression, string operation)
@@ -23,11 +23,9 @@ namespace ПЗ_3_и_4.IExpr.MainStruct
             Operation = operation;
         }
 
-        //abstract public override double Compute(IReadOnlyDictionary<string, double> variableValues);
-
         public override string ToString()
         {
-            if (Expression is not Constant && Expression is not Variable)
+            if (Expression is not Constant and not Variable)
                 return $"{Operation}({Expression})";
             return $"{Operation}{Expression}";
         }

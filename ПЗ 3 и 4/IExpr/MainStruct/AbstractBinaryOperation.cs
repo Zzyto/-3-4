@@ -15,17 +15,10 @@ namespace ПЗ_3_и_4.IExpr.MainStruct
 
         public override IEnumerable<string> Variables
         {
-            get
-            {
-                var allVars = new List<string>();
-                allVars.AddRange(FirstExpression.Variables);
-                allVars.AddRange(SecondExpression.Variables);
-
-                return allVars;
-            }
+            get => Enumerable.Concat<string>(FirstExpression.Variables, SecondExpression.Variables);
         }
 
-        public override bool IsConstant { get => !Variables.GetEnumerator().MoveNext(); }
+        public override bool IsConstant { get => !Variables.Any(); }
         public override bool IsPolynom { get => FirstExpression.IsPolynom && SecondExpression.IsPolynom; }
 
         public BinaryOperation(AbstractExpr firstExpression, AbstractExpr secondExpression, string operation = "")
@@ -40,13 +33,13 @@ namespace ПЗ_3_и_4.IExpr.MainStruct
         public override string ToString()
         {
             string outString;
-            if (FirstExpression is not Constant && FirstExpression is not Variable)
+            if (FirstExpression is not Constant and not Variable)
                 outString = $"({FirstExpression})";
             else
                 outString = $"{FirstExpression}";
             outString += $" {Operation} ";
 
-            if (SecondExpression is not Constant && SecondExpression is not Variable)
+            if (SecondExpression is not Constant and not Variable)
                 outString += $"({SecondExpression})";
             else
                 outString += $"{SecondExpression}";

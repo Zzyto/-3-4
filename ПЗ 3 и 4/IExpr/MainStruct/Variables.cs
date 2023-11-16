@@ -10,7 +10,7 @@ namespace ПЗ_3_и_4.IExpr.MainStruct
     {
         private string VariableName { get; init; }
 
-        public override IEnumerable<string> Variables { get => new List<string> { VariableName }; }
+        public override IEnumerable<string> Variables => new [] { VariableName };
         public override bool IsConstant { get => false; }
         public override bool IsPolynom { get => true; }
 
