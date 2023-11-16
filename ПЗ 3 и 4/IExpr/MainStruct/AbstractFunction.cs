@@ -26,7 +26,7 @@ namespace ПЗ_3_и_4.IExpr.MainStruct
             Expressions = new List<AbstractExpr>();
         }
 
-        public override bool IsConstant { get => !Variables.GetEnumerator().MoveNext(); }
+        public override bool IsConstant { get => !Variables.Any(); }
         public override bool IsPolynom
         {
             get
