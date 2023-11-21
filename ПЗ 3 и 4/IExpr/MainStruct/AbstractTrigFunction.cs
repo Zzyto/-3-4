@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ПЗ_3_и_4.IExpr.MainStruct
 {
-    public abstract class TrigFunction : Function
+    public abstract class TrigFunction : AbstractExpr
     {
         protected AbstractExpr Expression { get; init; }
         public override IEnumerable<string> Variables { get => Expression.Variables; }

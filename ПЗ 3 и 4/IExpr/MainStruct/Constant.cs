@@ -19,6 +19,6 @@ namespace ПЗ_3_и_4.IExpr.MainStruct
         public override double Compute(IReadOnlyDictionary<string, double> variableValues) => ConstValue;
         
         public override string ToString() => ConstValue.ToString();
-        public override AbstractExpr Differential(Variable differentialVariable) => new Constant(1);
+        public override AbstractExpr Differential(Variable differentialVariable) => new Constant(0);
     }
 }

@@ -360,6 +360,16 @@ namespace ПЗ_3_и_4.Test
                 Assert.AreEqual(expr.IsConstant, false);
                 Assert.AreEqual(expr.ToString(), "5 / a");
             }
+            [TestMethod]
+            public void DivisionVariables()
+            {
+                var a = new Variable("a");
+                var b = new Variable("b");
+                var expr = b / a;
+                Assert.AreEqual(expr.IsPolynom, false);
+                Assert.AreEqual(expr.IsConstant, false);
+                Assert.AreEqual(expr.ToString(), "b / a");
+            }
 
             [TestMethod]
             public void DivisionVariableFunction()
@@ -414,6 +424,16 @@ namespace ПЗ_3_и_4.Test
                 Assert.AreEqual(expr.IsPolynom, true);
                 Assert.AreEqual(expr.IsConstant, true);
                 Assert.AreEqual(expr.ToString(), "(Sin(5)) / (Cos(Sin(5)))");
+            }
+            [TestMethod]
+            public void DivisionFunctionAndFunction2()
+            {
+                var a = new Sin(new Variable("a"));
+                var b = new Cos(a);
+                var expr = a / b;
+                Assert.AreEqual(expr.IsPolynom, false);
+                Assert.AreEqual(expr.IsConstant, false);
+                Assert.AreEqual(expr.ToString(), "(Sin(a)) / (Cos(Sin(a)))");
             }
         }
     }

@@ -29,6 +29,7 @@ namespace ПЗ_3_и_4.IExpr
         //Деление
         public static Divide operator /(AbstractExpr LeftExpression, AbstractExpr RightExpression) => new(LeftExpression, RightExpression);
 
+        //Преобразование
         public static implicit operator AbstractExpr(double c) => new Constant(c);
     }
 }
