@@ -31,7 +31,7 @@ namespace ПЗ_3_и_4.Test
             [TestMethod]
             public void SumConstant1()
             {
-                var a = new Constant(2);
+                var a = 2;
                 var b = new Constant(5);
                 var expr = a + b;
                 Assert.AreEqual(expr.IsConstant, true);
@@ -62,7 +62,7 @@ namespace ПЗ_3_и_4.Test
             public void SumConstantVariable()
             {
                 var a = new Variable("a");
-                var b = new Constant(5);
+                var b = 5;
                 var expr = a + b;
                 Assert.AreEqual(expr.IsPolynom, true);
                 Assert.AreEqual(expr.IsConstant, false);
@@ -73,7 +73,7 @@ namespace ПЗ_3_и_4.Test
             public void SumVariableFunction()
             {
                 var a = new Variable("a");
-                var b = new Sin(new Constant(5));
+                var b = new Sin(5);
                 var expr = a + b;
                 Assert.AreEqual(expr.IsPolynom, true);
                 Assert.AreEqual(expr.IsConstant, false);
@@ -83,7 +83,7 @@ namespace ПЗ_3_и_4.Test
             [TestMethod]
             public void SumConstantFunction()
             {
-                var a = new Constant(5);
+                var a = 5;
                 var b = new Variable("a");
                 var c = new Cos(b);
                 var expr = a + c;
@@ -128,7 +128,7 @@ namespace ПЗ_3_и_4.Test
             [TestMethod]
             public void SubtractionConstants1()
             {
-                var a = new Constant(2);
+                var a = 2;
                 var b = new Constant(5);
                 var expr = a - b;
                 Assert.AreEqual(expr.IsConstant, true);
@@ -159,7 +159,7 @@ namespace ПЗ_3_и_4.Test
             public void SubtractionConstantAndVariable()
             {
                 var a = new Variable("a");
-                var b = new Constant(5);
+                var b = 5;
                 var expr = a - b;
                 Assert.AreEqual(expr.IsPolynom, true);
                 Assert.AreEqual(expr.IsConstant, false);
@@ -169,7 +169,7 @@ namespace ПЗ_3_и_4.Test
             public void SubtractionVariableAndFunction()
             {
                 var a = new Variable("a");
-                var b = new Tan(new Constant(5));
+                var b = new Tan(5);
                 var expr = a - b;
                 Assert.AreEqual(expr.IsPolynom, true);
                 Assert.AreEqual(expr.IsConstant, false);
@@ -178,7 +178,7 @@ namespace ПЗ_3_и_4.Test
             [TestMethod]
             public void SubtractionConstantAndFunction()
             {
-                var a = new Constant(5);
+                var a = 5;
                 var b = new Sin(a);
                 var expr = a - b;
                 Assert.AreEqual(expr.IsPolynom, true);
@@ -223,7 +223,7 @@ namespace ПЗ_3_и_4.Test
             [TestMethod]
             public void MultiplicationConstant1()
             {
-                var a = new Constant(2);
+                var a = 2;
                 var b = new Constant(5);
                 var expr = a * b;
                 Assert.AreEqual(expr.IsConstant, true);
@@ -254,7 +254,7 @@ namespace ПЗ_3_и_4.Test
             public void MultiplicationConstantVariable()
             {
                 var a = new Variable("a");
-                var b = new Constant(5);
+                var b = 5;
                 var expr = a * b;
                 Assert.AreEqual(expr.IsPolynom, true);
                 Assert.AreEqual(expr.IsConstant, false);
@@ -273,7 +273,7 @@ namespace ПЗ_3_и_4.Test
             [TestMethod]
             public void MultiplicationConstantAndFunction()
             {
-                var a = new Constant(5);
+                var a = 5;
                 var b = new Sin(new Variable("a"));
                 var expr = a * b;
                 Assert.AreEqual(expr.IsPolynom, false);
@@ -316,7 +316,7 @@ namespace ПЗ_3_и_4.Test
             [TestMethod]
             public void DivisionConstant1()
             {
-                var a = new Constant(2);
+                var a = 2;
                 var b = new Constant(5);
                 var expr = a / b;
                 Assert.AreEqual(expr.IsConstant, true);
@@ -344,7 +344,7 @@ namespace ПЗ_3_и_4.Test
             public void DivisionVariableConstant()
             {
                 var a = new Variable("a");
-                var b = new Constant(5);
+                var b = 5;
                 var expr = a / b;
                 Assert.AreEqual(expr.IsPolynom, true);
                 Assert.AreEqual(expr.IsConstant, false);
@@ -354,7 +354,7 @@ namespace ПЗ_3_и_4.Test
             public void DivisionConstantVariable()
             {
                 var a = new Variable("a");
-                var b = new Constant(5);
+                var b = 5;
                 var expr = b / a;
                 Assert.AreEqual(expr.IsPolynom, false);
                 Assert.AreEqual(expr.IsConstant, false);
@@ -375,7 +375,7 @@ namespace ПЗ_3_и_4.Test
             public void DivisionVariableFunction()
             {
                 var a = new Variable("a");
-                var b = new Sin(new Constant(5));
+                var b = new Sin(5);
                 var expr = a / b;
                 Assert.AreEqual(expr.IsPolynom, true);
                 Assert.AreEqual(expr.IsConstant, false);
@@ -386,7 +386,7 @@ namespace ПЗ_3_и_4.Test
             public void DivisionFunctionVariable()
             {
                 var a = new Variable("a");
-                var b = new Cos(new Constant(5));
+                var b = new Cos(5);
                 var expr = b / a;
                 Assert.AreEqual(expr.IsPolynom, false);
                 Assert.AreEqual(expr.IsConstant, false);
@@ -396,7 +396,7 @@ namespace ПЗ_3_и_4.Test
             [TestMethod]
             public void DivisionConstantAndFunction()
             {
-                var a = new Constant(5);
+                var a = 5;
                 var b = new Cot(a);
                 var expr = a / b;
                 Assert.AreEqual(expr.IsPolynom, true);
@@ -407,7 +407,7 @@ namespace ПЗ_3_и_4.Test
             [TestMethod]
             public void DivisionFunctionAndConstant()
             {
-                var a = new Constant(5);
+                var a = 5;
                 var b = new Tan(a);
                 var expr = b / a;
                 Assert.AreEqual(expr.IsPolynom, true);
@@ -418,7 +418,7 @@ namespace ПЗ_3_и_4.Test
             [TestMethod]
             public void DivisionFunctionAndFunction()
             {
-                var a = new Sin(new Constant(5));
+                var a = new Sin(5);
                 var b = new Cos(a);
                 var expr = a / b;
                 Assert.AreEqual(expr.IsPolynom, true);

@@ -42,7 +42,7 @@ namespace ПЗ_3_и_4_Test
         [TestMethod]
         public void UnaryMinusExprTest()
         {
-            var x = new Constant(2);
+            var x = 2;
             var a = new Variable("a");
             var expr = -(a+x);
             Assert.AreEqual(expr.IsConstant, false);
