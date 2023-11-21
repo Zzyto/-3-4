@@ -16,6 +16,8 @@ namespace ПЗ_3_и_4.IExpr
         abstract public bool IsPolynom { get; }
         abstract public double Compute(IReadOnlyDictionary<string, double> variableValues);
 
+        abstract public AbstractExpr Differential(Variable differentialVariable);
+
         //Унарный минус
         public static Minus operator -(AbstractExpr expression) => new(expression);
         //Сложение

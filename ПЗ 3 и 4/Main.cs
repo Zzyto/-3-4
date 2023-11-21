@@ -14,6 +14,13 @@ namespace PZ_3_4
     class PZ_3_4
     {
         [ExcludeFromCodeCoverage]
-        static void Main() {}
+        static void Main() 
+        {
+            var a = new Variable("a");
+            var b = new Variable("b");
+            var expr = a + b;
+            Console.WriteLine($"производная выражения по a: {expr.Differential(new Variable("a"))}");
+            Console.WriteLine($"производная выражения по b: {expr.Differential(new Variable("b"))}");
+        }
     }
 }

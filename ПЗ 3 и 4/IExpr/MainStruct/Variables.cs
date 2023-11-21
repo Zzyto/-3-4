@@ -24,5 +24,12 @@ namespace ПЗ_3_и_4.IExpr.MainStruct
                 throw new Exception($"Variable {VariableName} can't find itself in variableValues."); // I don't think it's a best idea, but...
         }
         public override string ToString() => VariableName;
+        public override AbstractExpr Differential(Variable differentialVariable)
+        {
+            if (differentialVariable.VariableName == VariableName)
+                return new Constant(1);
+            else
+                return new Constant(0);
+        }
     }
 }

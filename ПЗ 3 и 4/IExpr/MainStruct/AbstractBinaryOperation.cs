@@ -15,7 +15,7 @@ namespace ПЗ_3_и_4.IExpr.MainStruct
 
         public override IEnumerable<string> Variables
         {
-            get => Enumerable.Concat<string>(FirstExpression.Variables, SecondExpression.Variables);
+            get => Enumerable.Union(FirstExpression.Variables, SecondExpression.Variables);
         }
 
         public override bool IsConstant { get => !Variables.Any(); }

@@ -11,5 +11,7 @@ namespace ПЗ_3_и_4.IExpr.MainStruct.UnaryOperations
         public Minus(AbstractExpr expression) : base(expression, "-") { }
 
         public override double Compute(IReadOnlyDictionary<string, double> variableValues) =>  -(Expression.Compute(variableValues));
+        public override AbstractExpr Differential(Variable differentialVariable) =>
+            new Minus(Expression.Differential(differentialVariable));
     }
 }
