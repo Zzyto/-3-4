@@ -18,7 +18,8 @@ namespace ПЗ_3_и_4_Test
             {
                 var x = new Variable("x");
                 var expr = -x;
-                Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["x"] = 1 }), -1);
+                var y = expr.Compute(new Dictionary<string, double> { ["x"] = 1 });
+                Assert.AreEqual(-1, y);
             }
         }
         [TestMethod]
@@ -26,8 +27,8 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Variable("x");
             var expr = -x;
-            Assert.AreEqual(expr.IsPolynom, true);
-            Assert.AreEqual(expr.ToString(), "-x");
+            Assert.AreEqual(true, expr.IsPolynom);
+            Assert.AreEqual( "-x", expr.ToString());
         }
 
         [TestMethod]
@@ -35,9 +36,9 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Constant(2);
             var expr = -x;
-            Assert.AreEqual(expr.IsConstant, true);
-            Assert.AreEqual(expr.IsPolynom, true);
-            Assert.AreEqual(expr.ToString(), "-2");
+            Assert.AreEqual(true, expr.IsConstant);
+            Assert.AreEqual(true, expr.IsPolynom);
+            Assert.AreEqual( "-2", expr.ToString());
         }
         [TestMethod]
         public void UnaryMinusExprTest()
@@ -45,9 +46,9 @@ namespace ПЗ_3_и_4_Test
             var x = 2;
             var a = new Variable("a");
             var expr = -(a+x);
-            Assert.AreEqual(expr.IsConstant, false);
-            Assert.AreEqual(expr.IsPolynom, true);
-            Assert.AreEqual(expr.ToString(), "-(a + 2)");
+            Assert.AreEqual(false, expr.IsConstant);
+            Assert.AreEqual(true, expr.IsPolynom);
+            Assert.AreEqual("-(a + 2)", expr.ToString());
         }
     }
 }

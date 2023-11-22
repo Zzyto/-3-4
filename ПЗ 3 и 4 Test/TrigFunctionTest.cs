@@ -18,7 +18,8 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Variable("x");
             var expr = new Cos(x);
-            Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["x"] = 1 }), Math.Cos(1), 0.0001);
+            var y = expr.Compute(new Dictionary<string, double> { ["x"] = 1 });
+            Assert.AreEqual(Math.Cos(1),y, 0.0001);
         }
 
         [TestMethod]
@@ -26,7 +27,8 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Variable("x");
             var expr = new Cos(x);
-            Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["x"] = -1 }), Math.Cos(-1), 0.0001);
+            var y = expr.Compute(new Dictionary<string, double> { ["x"] = -1 });
+            Assert.AreEqual(Math.Cos(-1), y, 0.0001);
         }
 
         [TestMethod]
@@ -34,9 +36,9 @@ namespace ПЗ_3_и_4_Test
         {
             var a = new Variable("a");
             var expr = new Cos(a);
-            Assert.AreEqual(expr.IsPolynom, false);
-            Assert.AreEqual(expr.IsConstant, false);
-            Assert.AreEqual(expr.ToString(), "Cos(a)");
+            Assert.AreEqual(false, expr.IsPolynom);
+            Assert.AreEqual(false, expr.IsConstant);
+            Assert.AreEqual("Cos(a)", expr.ToString());
         }
 
         [TestMethod]
@@ -44,9 +46,9 @@ namespace ПЗ_3_и_4_Test
         {
             var a = 7;
             var expr = new Cos(a);
-            Assert.AreEqual(expr.IsPolynom, true);
-            Assert.AreEqual(expr.IsConstant, true);
-            Assert.AreEqual(expr.ToString(), "Cos(7)");
+            Assert.AreEqual(true, expr.IsPolynom);
+            Assert.AreEqual(true, expr.IsConstant);
+            Assert.AreEqual("Cos(7)", expr.ToString());
         }
 
         [TestMethod]
@@ -54,7 +56,8 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Variable("x");
             var expr = new Sin(x);
-            Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["x"] = 1 }), Math.Sin(1), 0.0001);
+            var y = expr.Compute(new Dictionary<string, double> { ["x"] = 1 });
+            Assert.AreEqual( Math.Sin(1),y, 0.0001);
         }
 
         [TestMethod]
@@ -62,7 +65,8 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Variable("x");
             var expr = new Sin(x);
-            Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["x"] = -1 }), Math.Sin(-1), 0.0001);
+            var y = expr.Compute(new Dictionary<string, double> { ["x"] = -1 });
+            Assert.AreEqual(Math.Sin(-1), y, 0.0001);
         }
 
         [TestMethod]
@@ -70,9 +74,9 @@ namespace ПЗ_3_и_4_Test
         {
             var a = new Variable("a");
             var expr = new Sin(a);
-            Assert.AreEqual(expr.IsPolynom, false);
-            Assert.AreEqual(expr.IsConstant, false);
-            Assert.AreEqual(expr.ToString(), "Sin(a)");
+            Assert.AreEqual(false, expr.IsPolynom);
+            Assert.AreEqual(false, expr.IsConstant);
+            Assert.AreEqual("Sin(a)", expr.ToString());
         }
 
         [TestMethod]
@@ -80,9 +84,9 @@ namespace ПЗ_3_и_4_Test
         {
             var a = 7;
             var expr = new Sin(a);
-            Assert.AreEqual(expr.IsPolynom, true);
-            Assert.AreEqual(expr.IsConstant, true);
-            Assert.AreEqual(expr.ToString(), "Sin(7)");
+            Assert.AreEqual(true, expr.IsPolynom);
+            Assert.AreEqual(true, expr.IsConstant);
+            Assert.AreEqual("Sin(7)", expr.ToString());
         }
 
         [TestMethod]
@@ -90,7 +94,8 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Variable("x");
             var expr = new Cot(x);
-            Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["x"] = 1 }), 1 / Math.Tan(1), 0.0001);
+            var y = expr.Compute(new Dictionary<string, double> { ["x"] = 1 });
+            Assert.AreEqual(1 / Math.Tan(1), y, 0.0001);
         }
 
         [TestMethod]
@@ -98,7 +103,8 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Variable("x");
             var expr = new Cot(x);
-            Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["x"] = -1 }), 1 / Math.Tan(-1), 0.0001);
+            var y = expr.Compute(new Dictionary<string, double> { ["x"] = -1 });
+            Assert.AreEqual(1 / Math.Tan(-1), y, 0.0001);
         }
 
         [TestMethod]
@@ -106,9 +112,9 @@ namespace ПЗ_3_и_4_Test
         {
             var a = new Variable("a");
             var expr = new Cot(a);
-            Assert.AreEqual(expr.IsPolynom, false);
-            Assert.AreEqual(expr.IsConstant, false);
-            Assert.AreEqual(expr.ToString(), "Cot(a)");
+            Assert.AreEqual(false, expr.IsPolynom);
+            Assert.AreEqual(false, expr.IsConstant);
+            Assert.AreEqual("Cot(a)", expr.ToString());
         }
 
         [TestMethod]
@@ -116,9 +122,9 @@ namespace ПЗ_3_и_4_Test
         {
             var a = 7;
             var expr = new Cot(a);
-            Assert.AreEqual(expr.IsPolynom, true);
-            Assert.AreEqual(expr.IsConstant, true);
-            Assert.AreEqual(expr.ToString(), "Cot(7)");
+            Assert.AreEqual(true, expr.IsPolynom);
+            Assert.AreEqual(true, expr.IsConstant);
+            Assert.AreEqual("Cot(7)", expr.ToString());
         }
         
         [TestMethod]
@@ -126,7 +132,8 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Variable("x");
             var expr = new Tan(x);
-            Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["x"] = 1 }), Math.Tan(1), 0.0001);
+            var y = expr.Compute(new Dictionary<string, double> { ["x"] = 1 });
+            Assert.AreEqual(Math.Tan(1), y, 0.0001);
         }
 
         [TestMethod]
@@ -134,7 +141,8 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Variable("x");
             var expr = new Tan(x);
-            Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["x"] = -1 }), Math.Tan(-1), 0.0001);
+            var y = expr.Compute(new Dictionary<string, double> { ["x"] = -1 });
+            Assert.AreEqual(Math.Tan(-1), y, 0.0001);
         }
 
         [TestMethod]
@@ -142,9 +150,9 @@ namespace ПЗ_3_и_4_Test
         {
             var a = new Variable("a");
             var expr = new Tan(a);
-            Assert.AreEqual(expr.IsPolynom, false);
-            Assert.AreEqual(expr.IsConstant, false);
-            Assert.AreEqual(expr.ToString(), "Tan(a)");
+            Assert.AreEqual(false, expr.IsPolynom);
+            Assert.AreEqual(false, expr.IsConstant);
+            Assert.AreEqual("Tan(a)", expr.ToString());
         }
 
         [TestMethod]
@@ -152,9 +160,9 @@ namespace ПЗ_3_и_4_Test
         {
             var a = 7;
             var expr = new Tan(a);
-            Assert.AreEqual(expr.IsPolynom, true);
-            Assert.AreEqual(expr.IsConstant, true);
-            Assert.AreEqual(expr.ToString(), "Tan(7)");
+            Assert.AreEqual(true, expr.IsPolynom);
+            Assert.AreEqual(true, expr.IsConstant);
+            Assert.AreEqual("Tan(7)", expr.ToString());
         }
         
     }

@@ -15,9 +15,9 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Constant(1);
             var expr = x;
-            Assert.AreEqual(expr.IsConstant, true);
-            Assert.AreEqual(expr.IsPolynom, true);
-            Assert.AreEqual(expr.ToString(), "1");
+            Assert.AreEqual(true, expr.IsConstant);
+            Assert.AreEqual(true, expr.IsPolynom);
+            Assert.AreEqual("1", expr.ToString());
         }
     }
 }

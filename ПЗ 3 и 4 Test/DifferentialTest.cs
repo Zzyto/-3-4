@@ -22,7 +22,7 @@ namespace ПЗ_3_и_4_Test
             {
                 var a = new Variable("a");
                 var expr = -a;
-                Assert.AreEqual(expr.Differential(a).ToString(), "-1");
+                Assert.AreEqual("-1", expr.Differential(a).ToString());
             }
         }
         [TestClass]
@@ -34,8 +34,8 @@ namespace ПЗ_3_и_4_Test
                 var a = new Variable("a");
                 var b = new Variable("b");
                 var expr = a + b;
-                Assert.AreEqual(expr.Differential(a).ToString(), "1 + 0");
-                Assert.AreEqual(expr.Differential(b).ToString(), "0 + 1");
+                Assert.AreEqual("1 + 0", expr.Differential(a).ToString());
+                Assert.AreEqual("0 + 1", expr.Differential(b).ToString());
             }
             [TestMethod]
             public void SubConstant()
@@ -43,8 +43,8 @@ namespace ПЗ_3_и_4_Test
                 var a = new Variable("a");
                 var b = new Variable("b");
                 var expr = a - b;
-                Assert.AreEqual(expr.Differential(a).ToString(), "1 - 0");
-                Assert.AreEqual(expr.Differential(b).ToString(), "0 - 1");
+                Assert.AreEqual("1 - 0", expr.Differential(a).ToString());
+                Assert.AreEqual("0 - 1", expr.Differential(b).ToString());
             }
             [TestMethod]
             public void MultConstant()
@@ -52,8 +52,8 @@ namespace ПЗ_3_и_4_Test
                 var a = new Variable("a");
                 var b = new Variable("b");
                 var expr = a * b;
-                Assert.AreEqual(expr.Differential(a).ToString(), "(1 * b) + (a * 0)");
-                Assert.AreEqual(expr.Differential(b).ToString(), "(0 * b) + (a * 1)");
+                Assert.AreEqual("(1 * b) + (a * 0)", expr.Differential(a).ToString());
+                Assert.AreEqual("(0 * b) + (a * 1)", expr.Differential(b).ToString());
             }
             [TestMethod]
             public void DevideConstant()
@@ -61,14 +61,14 @@ namespace ПЗ_3_и_4_Test
                 var a = new Variable("a");
                 var b = new Variable("b");
                 var expr = a / b;
-                Assert.AreEqual(expr.Differential(a).ToString(), "((1 * b) - (a * 0)) / (b * b)");
-                Assert.AreEqual(expr.Differential(b).ToString(), "((0 * b) - (a * 1)) / (b * b)");
+                Assert.AreEqual("((1 * b) - (a * 0)) / (b * b)", expr.Differential(a).ToString());
+                Assert.AreEqual("((0 * b) - (a * 1)) / (b * b)", expr.Differential(b).ToString());
             }
             [TestMethod]
             public void ConstantTest()
             {
                 AbstractExpr a = 2;
-                Assert.AreEqual(a.Differential(new Variable("x")).ToString(), "0");
+                Assert.AreEqual("0", a.Differential(new Variable("x")).ToString());
             }
         }
         [TestClass]
@@ -79,7 +79,7 @@ namespace ПЗ_3_и_4_Test
             {
                 var x = new Variable("x");
                 var expr = new Sin(x);
-                Assert.AreEqual(expr.Differential(x).ToString(), "(Cos(x)) * 1");
+                Assert.AreEqual( "(Cos(x)) * 1", expr.Differential(x).ToString());
             }
             [TestMethod]
             public void SinTestConst() 
@@ -87,14 +87,14 @@ namespace ПЗ_3_и_4_Test
                 var x = new Variable("x");
                 var a = 23;
                 var expr = new Sin(a);
-                Assert.AreEqual(expr.Differential(x).ToString(), "0");
+                Assert.AreEqual( "0", expr.Differential(x).ToString());
             }
             [TestMethod]
             public void CosTestVar()
             {
                 var x = new Variable("x");
                 var expr = new Cos(x);
-                Assert.AreEqual(expr.Differential(x).ToString(), "-((Sin(x)) * 1)");
+                Assert.AreEqual("-((Sin(x)) * 1)", expr.Differential(x).ToString());
             }
             [TestMethod]
             public void CosTestConst()
@@ -102,14 +102,14 @@ namespace ПЗ_3_и_4_Test
                 var x = new Variable("x");
                 var a = 23;
                 var expr = new Cos(a);
-                Assert.AreEqual(expr.Differential(x).ToString(), "0");
+                Assert.AreEqual("0", expr.Differential(x).ToString());
             }
             [TestMethod]
             public void TanTestVar()
             {
                 var x = new Variable("x");
                 var expr = new Tan(x);
-                Assert.AreEqual(expr.Differential(x).ToString(), "1 / ((Cos(x)) * (Cos(x)))");
+                Assert.AreEqual( "1 / ((Cos(x)) * (Cos(x)))", expr.Differential(x).ToString());
             }
             [TestMethod]
             public void TanTestConst()
@@ -117,14 +117,14 @@ namespace ПЗ_3_и_4_Test
                 var x = new Variable("x");
                 var a = 23;
                 var expr = new Tan(a);
-                Assert.AreEqual(expr.Differential(x).ToString(), "0");
+                Assert.AreEqual("0", expr.Differential(x).ToString());
             }
             [TestMethod]
             public void CotTest()
             {
                 var x = new Variable("x");
                 var expr = new Cot(x);
-                Assert.AreEqual(expr.Differential(x).ToString(), "(-1) / ((Sin(x)) * (Sin(x)))");
+                Assert.AreEqual("(-1) / ((Sin(x)) * (Sin(x)))", expr.Differential(x).ToString());
             }
             [TestMethod]
             public void CotTestConst()
@@ -132,7 +132,7 @@ namespace ПЗ_3_и_4_Test
                 var x = new Variable("x");
                 var a = 23;
                 var expr = new Cot(a);
-                Assert.AreEqual(expr.Differential(x).ToString(), "0");
+                Assert.AreEqual("0", expr.Differential(x).ToString());
             }
         }
     }

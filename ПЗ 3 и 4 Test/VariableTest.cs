@@ -16,9 +16,9 @@ namespace ПЗ_3_и_4_Test
         {
             var x = new Variable("x");
             var expr = x;
-            Assert.AreEqual(expr.IsConstant, false);
-            Assert.AreEqual(expr.IsPolynom, true);
-            Assert.AreEqual(expr.ToString(), "x");
+            Assert.AreEqual(false, expr.IsConstant);
+            Assert.AreEqual(true, expr.IsPolynom);
+            Assert.AreEqual("x", expr.ToString());
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "Variable b can't find itself in variableValues.")]

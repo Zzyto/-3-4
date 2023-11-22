@@ -20,8 +20,9 @@ namespace ПЗ_3_и_4_Test
                 var a = new Variable("a");
                 var b = new Variable("b");
                 var expr = a + a * b;
-                Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["a"] = 5, ["b"] = 3 }), 20);
-                Assert.AreEqual(expr.ToString(), "a + (a * b)");
+                var c = expr.Compute(new Dictionary<string, double> { ["a"] = 5, ["b"] = 3 });
+                Assert.AreEqual(20, c);
+                Assert.AreEqual("a + (a * b)", expr.ToString());
             }
 
             [TestMethod]
@@ -30,8 +31,9 @@ namespace ПЗ_3_и_4_Test
                 var a = new Variable("a");
                 var b = new Variable("b");
                 var expr = a * b + new Sin(a);
-                Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["a"] = 1, ["b"] = 0 }), 0.841, 0.001);
-                Assert.AreEqual(expr.ToString(), "(a * b) + (Sin(a))");
+                var c = expr.Compute(new Dictionary<string, double> { ["a"] = 1, ["b"] = 0 });
+                Assert.AreEqual( 0.841, c, 0.001);
+                Assert.AreEqual("(a * b) + (Sin(a))", expr.ToString());
             }
 
             [TestMethod]
@@ -40,8 +42,9 @@ namespace ПЗ_3_и_4_Test
                 var a = new Variable("a");
                 var b = new Variable("b");
                 var expr = a / (b + 3);
-                Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["a"] = 4, ["b"] = 1 }), 1);
-                Assert.AreEqual(expr.ToString(), "a / (b + 3)");
+                var c = expr.Compute(new Dictionary<string, double> { ["a"] = 4, ["b"] = 1 });
+                Assert.AreEqual(1, c);
+                Assert.AreEqual("a / (b + 3)", expr.ToString());
             }
 
             [TestMethod]
@@ -50,8 +53,9 @@ namespace ПЗ_3_и_4_Test
                 var a = new Variable("a");
                 var b = new Variable("b");
                 var expr = a * b - 10;
-                Assert.AreEqual(expr.Compute(new Dictionary<string, double> { ["a"] = 1, ["b"] = 0 }), -10);
-                Assert.AreEqual(expr.ToString(), "(a * b) - 10");
+                var c = expr.Compute(new Dictionary<string, double> { ["a"] = 1, ["b"] = 0 });
+                Assert.AreEqual(-10, c);
+                Assert.AreEqual("(a * b) - 10", expr.ToString());
             }
         }
     }
