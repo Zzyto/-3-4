@@ -27,9 +27,8 @@ namespace ПЗ_3_и_4.IExpr.MainStruct
         public override AbstractExpr Differential(Variable differentialVariable)
         {
             if (differentialVariable.VariableName == VariableName)
-                return new Constant(1);
-            else
-                return new Constant(0);
+                return 1;
+            return 0;
         }
     }
 }

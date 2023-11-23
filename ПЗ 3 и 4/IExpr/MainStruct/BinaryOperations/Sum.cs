@@ -13,6 +13,6 @@ namespace ПЗ_3_и_4.IExpr.MainStruct.BinaryOperations
         public override double Compute(IReadOnlyDictionary<string, double> variableValues) =>
             FirstExpression.Compute(variableValues) + SecondExpression.Compute(variableValues);
         public override AbstractExpr Differential(Variable differentialVariable) =>
-           new Sum(FirstExpression.Differential(differentialVariable), SecondExpression.Differential(differentialVariable));
+           FirstExpression.Differential(differentialVariable) + SecondExpression.Differential(differentialVariable);
     }
 }

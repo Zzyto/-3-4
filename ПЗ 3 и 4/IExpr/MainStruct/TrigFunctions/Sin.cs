@@ -16,11 +16,9 @@ namespace ПЗ_3_и_4.IExpr.MainStruct.Functions
         public override string ToString() => $"Sin({Expression})";
         public override AbstractExpr Differential(Variable differentialVariable)
         {
-            if (new List<string>(Expression.Variables).Contains(differentialVariable.ToString()))
-            {
+            if (Expression.Variables.Contains<string>(differentialVariable.ToString()))
                 return new Cos(Expression) * Expression.Differential(differentialVariable);
-            }
-            return new Constant(0);
+            return 0;
         }
     }
 }
