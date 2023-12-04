@@ -12,6 +12,6 @@ namespace ПЗ_3_и_4.IExpr.MainStruct.UnaryOperations
 
         public override double Compute(IReadOnlyDictionary<string, double> variableValues) =>  -(Expression.Compute(variableValues));
         public override AbstractExpr Differential(Variable differentialVariable) =>
-            new Minus(Expression.Differential(differentialVariable));
+            -(Expression.Differential(differentialVariable));
     }
 }

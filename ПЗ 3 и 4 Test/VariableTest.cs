@@ -5,12 +5,40 @@ using System.Text;
 using System.Threading.Tasks;
 using ПЗ_3_и_4.IExpr;
 using ПЗ_3_и_4.IExpr.MainStruct;
+using ПЗ_3_и_4.IExpr.MainStruct.Functions;
 
 namespace ПЗ_3_и_4_Test
 {
     [TestClass]
     public class VariableTest
     {
+        [TestMethod]
+        public void VariableExist()
+        {
+            var a = new Variable("a");
+            var x = new Sin(a);
+            var expr = a + x;
+            ICollection<string> expected = ["a"];
+            CollectionAssert.Equals(expected, expr.Variables);
+        }
+        [TestMethod]
+        public void VariableNotExist()
+        {
+            var a = 2;
+            var x = new Sin(1);
+            var expr = a + x;
+            ICollection<string> expected = [];
+            CollectionAssert.Equals(expected, expr.Variables);  
+        }
+        [TestMethod] public void VariableExist2()
+        {
+            var a = new Variable("a");
+            var b = new Variable("b");
+            var x = new Sin(b);
+            var expr = a + x;
+            ICollection<string> expected = ["a", "b"];
+            CollectionAssert.Equals(expected, expr.Variables);
+        }
         [TestMethod]
         public void VariableX()
         {

@@ -16,7 +16,7 @@ namespace ПЗ_3_и_4.IExpr.MainStruct
         public override bool IsConstant { get => !Variables.Any(); }
         public override bool IsPolynom { get => IsConstant; }
 
-        override abstract public double Compute(IReadOnlyDictionary<string, double> variableValues);
+         override abstract public double Compute(IReadOnlyDictionary<string, double> variableValues);
 
         override abstract public string ToString();
     }
